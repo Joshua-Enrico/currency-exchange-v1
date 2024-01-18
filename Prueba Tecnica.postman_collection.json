@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "8c686931-bbe3-4ef2-bbc7-e1c453c653f3",
+		"name": "Prueba Tecnica",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18675199"
+	},
+	"item": [
+		{
+			"name": "Realizar cambio",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTcwMjY2MzkzMCwiZXhwIjoxNzAyNjY0MjMwfQ.ED8HGOnPNOXlLv_yd5VKyFiIEtSay3vNoaS3_apv_U0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/exchange/change?currencyFrom=dolar&currencyTo=bitcoin&amount=123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"exchange",
+						"change"
+					],
+					"query": [
+						{
+							"key": "currencyFrom",
+							"value": "dolar"
+						},
+						{
+							"key": "currencyTo",
+							"value": "bitcoin"
+						},
+						{
+							"key": "amount",
+							"value": "123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"pepe\",\r\n    \"passsword\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar tipo de cambio para una divisa en especifico",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTcwMjY2MTgyNSwiZXhwIjoxNzAyNjYyMTI1fQ.Sn-_st14nBIMnil0SfHcbOa-OdwYhY1Lg9umeRVuAn0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"currency\": \"sol\",\r\n    \"currencyToUpdate\": \"dolar\",\r\n    \"amount\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/exchange/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"exchange",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Autenticar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"pepe\",\r\n    \"passsword\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
